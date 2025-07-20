@@ -29,10 +29,12 @@ const Restaurant = () => {
           }
         }).then(res => res.json()).
         then(data=>{
-          if(data.error){
+          if(data.error === "Unauthorized1" || data.error === "Unauthorized2"){
            sessionStorage.removeItem("token")
            sessionStorage.removeItem("user")
             navigate('/login')
+            throw new Error(data.error)
+          }else if(data.error){
             throw new Error(data.error)
           }
           console.log(data)
@@ -45,7 +47,7 @@ const Restaurant = () => {
         })
         .catch(e=>{
           console.log(e)
-          navigate('/login')
+          navigate('/')
         })
       },[currentPage])
   // const {data: restaurants, isLoading, error} = useSuspenseQuery({
@@ -89,10 +91,12 @@ const Restaurant = () => {
       }
     }).then(res => res.json()).
     then(data=>{
-      if(data.error){
+      if(data.error === "Unauthorized1" || data.error === "Unauthorized2"){
        sessionStorage.removeItem("token")
        sessionStorage.removeItem("user")
         navigate('/login')
+        throw new Error(data.error)
+      }else if(data.error){
         throw new Error(data.error)
       }
       setRestau(data)
