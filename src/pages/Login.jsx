@@ -4,6 +4,7 @@ import {useFormStatus} from "react-dom";
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { UserContext } from '../context/UserContext.jsx';
+import google from '../assets/google.svg';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -146,16 +147,9 @@ const Login = () => {
                 onClick={() => {
                   window.location.href = `${import.meta.env.VITE_BACKEND_URL}/auth/google`;
                 }}
-                className="w-full flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2"
+                className="w-full text-gray-600 flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2"
               >
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <g>
-                    <path d="M44.5 20H24v8.5h11.7C34.7 32.9 29.8 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c2.8 0 5.4 1 7.5 2.7l6.4-6.4C34.1 6.5 29.3 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5c10.5 0 20-8.5 20-20 0-1.3-.1-2.7-.3-4z" fill="#FFC107"/>
-                    <path d="M6.3 14.1l7 5.1C15.2 16.1 19.3 13.5 24 13.5c2.8 0 5.4 1 7.5 2.7l6.4-6.4C34.1 6.5 29.3 4.5 24 4.5c-7.1 0-13.2 4.1-16.2 10.1z" fill="#FF3D00"/>
-                    <path d="M24 45.5c5.8 0 11.1-2.2 15.1-5.8l-7-5.8C29.5 36.1 26.9 37 24 37c-5.7 0-10.6-3.1-13.1-7.7l-7 5.4C6.7 41.1 14.7 45.5 24 45.5z" fill="#4CAF50"/>
-                    <path d="M44.5 20H24v8.5h11.7c-1.1 3.1-4.1 5.5-7.7 5.5-2.1 0-4.1-.7-5.6-2l-7 5.4C15.2 41.1 19.3 43.5 24 43.5c5.8 0 11.1-2.2 15.1-5.8l-7-5.8C29.5 36.1 26.9 37 24 37c-5.7 0-10.6-3.1-13.1-7.7l-7 5.4C6.7 41.1 14.7 45.5 24 45.5z" fill="#1976D2"/>
-                  </g>
-                </svg>
+               <img src={google} alt="google" className=' w-5 h-5 mr-2' />
                 Sign in with Google
               </button>
             </div>
