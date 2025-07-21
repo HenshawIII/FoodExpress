@@ -4,6 +4,15 @@ import { useContext } from 'react';
 import Subscribe from '../components/Subscribe';
 import Features from '../components/Features';
 import CircularGallery from '../components/CircularGallery';
+import sushi from "../assets/sushi.png";
+import pizza from "../assets/pizza.png";
+import burger from "../assets/burger.png";
+import pasta from "../assets/pasta.png";
+import salad from "../assets/salad.png";
+import dessert from "../assets/desserts.png";
+import drinks from "../assets/drinks.png";
+import lunch from "../assets/lunch.webp";
+import buffet from "../assets/buffet.png";
 
 const Home = () => {
   const { user } = useContext(UserContext);
@@ -59,9 +68,20 @@ const Home = () => {
       </div>
       <Features />
       {/* Rest of the content */}
-      <div style={{ height: '600px', position: 'relative' }}>
-  <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.005}/>
-</div>
+      <div style={{ height: '600px', position: 'relative' }} className='hidden md:block'>
+          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.005}/>
+      </div>
+      <div className='md:hidden flex overflow-x-auto space-x-4 px-4 py-4 max-h-[220px] scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-blue-100'>
+        <img src={sushi} alt="sushi" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={pizza} alt="pizza" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={burger} alt="burger" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={pasta} alt="pasta" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={salad} alt="salad" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={dessert} alt="dessert" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={drinks} alt="drinks" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={lunch} alt="lunch" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+        <img src={buffet} alt="buffet" className='h-40 w-40 min-w-[10rem] object-cover rounded-xl shadow-md transition-transform duration-200 hover:scale-105' />
+      </div>
       <Subscribe />
      
     </div>
